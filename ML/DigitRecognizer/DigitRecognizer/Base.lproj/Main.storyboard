@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DigitRecognizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NGG-rh-jw5" customClass="DrawingImageView" customModule="DigitRecognizer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="448" width="414" height="414"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NGG-rh-jw5" secondAttribute="height" multiplier="1:1" id="mqe-kK-Avb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXz-bO-sYB">
+                                <rect key="frame" x="171" y="165" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="DkS-eW-eUT"/>
+                                    <constraint firstAttribute="height" constant="100" id="z07-jp-mbl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LXz-bO-sYB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="121" id="1Sv-J5-aeh"/>
+                            <constraint firstItem="NGG-rh-jw5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3fT-80-oPq"/>
+                            <constraint firstItem="NGG-rh-jw5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6mM-gg-xZY"/>
+                            <constraint firstItem="NGG-rh-jw5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Lkn-ih-2WD"/>
+                            <constraint firstItem="NGG-rh-jw5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aqP-zv-1qZ"/>
+                            <constraint firstItem="NGG-rh-jw5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="azw-9r-xpi"/>
+                            <constraint firstItem="LXz-bO-sYB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="171" id="ntr-Rh-7Nj"/>
+                            <constraint firstItem="NGG-rh-jw5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uyR-OD-h8p"/>
+                            <constraint firstItem="NGG-rh-jw5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vID-9b-dDq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="drawingView" destination="NGG-rh-jw5" id="DUx-if-Ne2"/>
+                        <outlet property="numberLabel" destination="LXz-bO-sYB" id="wpV-oa-4Sx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="66.964285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

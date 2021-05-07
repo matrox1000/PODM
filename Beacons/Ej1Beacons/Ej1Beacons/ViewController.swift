@@ -44,10 +44,10 @@ extension ViewController: CLLocationManagerDelegate {
        //let proximityUUID = UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")
         
         let proximityUUID = UUID(uuidString:
-                    "39ED98FF-2900-441A-802F-9C398FC199D2")
+                    "BA901297-63DA-4DE4-9E5B-BEA09106319D")
         //let proximityUUID = UUID(uuidString:"2655be5c-bf96-4e92-9859-2988e71efd01")
         let regionID = "es.ua.mastermoviles.A"
-        let majorNumber = CLBeaconMajorValue(99)
+        let majorNumber = CLBeaconMajorValue(5)
         // Creamos la región y empezamos a monitorizarla
         let region = CLBeaconRegion (proximityUUID: proximityUUID!,
                                      major: majorNumber,
@@ -88,6 +88,13 @@ extension ViewController: CLLocationManagerDelegate {
 
             }
         }
+    }
+    
+    
+    
+    func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
+        print("didDetermineState:")
+        print(state.rawValue)
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
