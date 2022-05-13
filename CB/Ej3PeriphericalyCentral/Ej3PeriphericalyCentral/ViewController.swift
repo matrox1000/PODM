@@ -95,7 +95,7 @@ extension ViewController: CBPeripheralDelegate {
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         for characteristic in service.characteristics! {
-            print("Central: Hemos encontrado caracterísitca con UUID: " + characteristic.uuid.uuidString + " del periférico:" + characteristic.service.peripheral.name!)
+            print("Central: Hemos encontrado caracterísitca con UUID: " + characteristic.uuid.uuidString + " del periférico:" + characteristic.service!.peripheral!.name!)
             if characteristic.uuid == CHARACTERISTIC_UUID {
                 if (characteristic.properties.contains(.read)){
                     print("Central: Hemos encontrado caracterísitca y solicitamos lectura de su valor")
@@ -126,7 +126,8 @@ extension ViewController: CBPeripheralManagerDelegate {
             
             //Montamos servicio y característica
             let myService = CBMutableService(type: SERVICE_UUID, primary: true)
-            let myCharacteristic = CBMutableCharacteristic(type: CHARACTERISTIC_UUID, properties: CHARACTERISTIC_PROPERTIES, value: "Hola, Mundo".data(using: .utf8), permissions: CHARACTERISTIC_PERMISSIONS)
+            let message = "Hola, \(UIDevice.current.name)"
+            let myCharacteristic = CBMutableCharacteristic(type: CHARACTERISTIC_UUID, properties: CHARACTERISTIC_PROPERTIES, value: message.data(using: .utf8), permissions: CHARACTERISTIC_PERMISSIONS)
             myService.characteristics = [myCharacteristic]
             
             //La añadimos al periférico local
