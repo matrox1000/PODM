@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B88086DC-2647-44D2-A7B7-34D26F4B29C0"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67E67459-43B6-4DEA-BAD9-51620612ABD5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ej4NeedleDown/ViewController.swift"
+            timestampString = "569921185.244699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "67E67459-43B6-4DEA-BAD9-51620612ABD5 - 61a8addd0b1bdc71"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ej4NeedleDown.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Ej4NeedleDown"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Cuevas/Developer/PODM2018-2019/Ejercicios/Tema1CoreMotion/Ej4NeedleDown/Ej4NeedleDown/ViewController.swift"
+                  timestampString = "569881192.4291199"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "67E67459-43B6-4DEA-BAD9-51620612ABD5 - 48a022b2190548d8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.CMDeviceMotion&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Ej4NeedleDown.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Ej4NeedleDown"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Cuevas/Developer/PODM2018-2019/Ejercicios/Tema1CoreMotion/Ej4NeedleDown/Ej4NeedleDown/ViewController.swift"
+                  timestampString = "569881192.431174"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

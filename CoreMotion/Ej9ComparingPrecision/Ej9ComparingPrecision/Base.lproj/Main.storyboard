@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ACEL-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Ej9ComparingPrecision" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="needle" translatesAutoresizingMaskIntoConstraints="NO" id="j4X-TQ-ZKP">
+                                <rect key="frame" x="107.5" y="236" width="160" height="195"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="j4X-TQ-ZKP" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="GKq-23-d3K"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="j4X-TQ-ZKP" secondAttribute="bottom" constant="187" id="WSD-Iw-2JI"/>
+                            <constraint firstItem="j4X-TQ-ZKP" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="rkG-Pa-jHe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ACEL" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="needleUImage" destination="j4X-TQ-ZKP" id="THs-Gw-fZV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+        </scene>
+        <!--GYRO-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Ej9ComparingPrecision" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="needle" translatesAutoresizingMaskIntoConstraints="NO" id="FIA-fC-7wV">
+                                <rect key="frame" x="107.5" y="232" width="160" height="203"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FIA-fC-7wV" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="JJJ-Mr-J1z"/>
+                            <constraint firstItem="FIA-fC-7wV" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="aBw-5s-xkJ"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="FIA-fC-7wV" secondAttribute="bottom" constant="183" id="nP0-P7-d3f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="GYRO" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="needleUImage" destination="FIA-fC-7wV" id="eUZ-fJ-PPN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="usJ-Zb-Euy" kind="relationship" relationship="viewControllers" id="as7-nM-zC1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--MAGN-->
+        <scene sceneID="4wO-Cr-bdu">
+            <objects>
+                <viewController id="usJ-Zb-Euy" customClass="ThirdViewController" customModule="Ej9ComparingPrecision" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uo8-Ay-hX6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="needle" translatesAutoresizingMaskIntoConstraints="NO" id="F63-DS-ZTM">
+                                <rect key="frame" x="109" y="245" width="160" height="195"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="F63-DS-ZTM" firstAttribute="centerX" secondItem="Uo8-Ay-hX6" secondAttribute="centerX" id="HRv-we-Kh5"/>
+                            <constraint firstItem="F63-DS-ZTM" firstAttribute="centerY" secondItem="Uo8-Ay-hX6" secondAttribute="centerY" id="QTP-OV-hVD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ihk-bU-L7j"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="MAGN" id="lSH-ip-Yb7"/>
+                    <connections>
+                        <outlet property="needleUImage" destination="F63-DS-ZTM" id="R4a-Hs-Rr6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zaI-VT-qqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150" y="-760"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="needle" width="160" height="809"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+</document>

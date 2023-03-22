@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ej6CurrentPodometerData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riG-YD-YWA">
+                                <rect key="frame" x="115" y="165" width="145" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="UtM-Mh-Vtl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="pasos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWd-Q4-RQ9">
+                                <rect key="frame" x="115" y="44" width="145" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="bxv-za-MOF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aae-Or-FpH">
+                                <rect key="frame" x="0.0" y="316" width="375" height="48"/>
+                                <color key="backgroundColor" red="0.52347099779999995" green="0.70110189909999998" blue="0.74510711429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <state key="normal" title="EMPEZAR">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="StartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ceh-UO-JC1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aae-Or-FpH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="40e-Bs-pKi"/>
+                            <constraint firstItem="fWd-Q4-RQ9" firstAttribute="trailing" secondItem="riG-YD-YWA" secondAttribute="trailing" id="8Fy-J0-5Xc"/>
+                            <constraint firstItem="riG-YD-YWA" firstAttribute="centerX" secondItem="aae-Or-FpH" secondAttribute="centerX" id="BNk-N8-0Ar"/>
+                            <constraint firstItem="riG-YD-YWA" firstAttribute="top" secondItem="fWd-Q4-RQ9" secondAttribute="bottom" constant="8" symbolic="YES" id="bAo-Nj-pm5"/>
+                            <constraint firstItem="riG-YD-YWA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="dJy-Hr-N6r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="riG-YD-YWA" secondAttribute="trailing" constant="115" id="fg3-Lt-CbO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aae-Or-FpH" secondAttribute="trailing" id="inl-iV-mAL"/>
+                            <constraint firstItem="aae-Or-FpH" firstAttribute="top" secondItem="riG-YD-YWA" secondAttribute="bottom" constant="38" id="vWT-Oy-6mr"/>
+                            <constraint firstItem="fWd-Q4-RQ9" firstAttribute="leading" secondItem="riG-YD-YWA" secondAttribute="leading" id="wdu-JQ-glm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="startButton" destination="aae-Or-FpH" id="vGm-5N-iLu"/>
+                        <outlet property="stepsLabel" destination="riG-YD-YWA" id="RXs-pl-6pF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
