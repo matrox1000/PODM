@@ -1,0 +1,89 @@
+//
+//  ViewController.swift
+//  Ej1CoreLocation
+//
+//  Created by lucas on 15/02/2019.
+//  Copyright © 2019 lucas. All rights reserved.
+//
+
+import UIKit
+
+import CoreLocation
+import MapKit
+
+class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+
+    private let locationManager = CLLocationManager()
+    private var locationsHistory: [CLLocation] = []
+    private var totalMovementDistance = CLLocationDistance(0)
+    @IBOutlet var latitudeLabel: UILabel!
+    @IBOutlet var longitudeLabel: UILabel!
+    @IBOutlet var horizontalAccuracyLabel: UILabel!
+    @IBOutlet var altitudeLabel: UILabel!
+    @IBOutlet var verticalAccuracyLabel: UILabel!
+    @IBOutlet var distanceTraveledLabel: UILabel!
+    @IBOutlet var mapView:MKMapView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager,
+                         didChangeAuthorization status: CLAuthorizationStatus) {
+
+        print("Authorization status changed to \(status.rawValue)")
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+            print("Empezamos a sondear la ubicación")
+        default:
+            locationManager.stopUpdatingLocation()
+            print("Paramos el sondeo de la ubicación")
+
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        let alertController = UIAlertController(title: "Location Manager Error", message: error.localizedDescription , preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: { action in })
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations
+        locations: [CLLocation]) {
+        for newLocation in locations {
+            if newLocation.horizontalAccuracy < 100 && newLocation.horizontalAccuracy >= 0 && newLocation.verticalAccuracy < 50 {
+                let latitudeString = String(format: "%gº", newLocation.coordinate.latitude)
+                latitudeLabel.text = latitudeString
+                let longitudeString = String(format: "%gº", newLocation.coordinate.longitude)
+                longitudeLabel.text = longitudeString
+                let horizontalAccuracyString = String(format:"%gm", newLocation.horizontalAccuracy)
+                horizontalAccuracyLabel.text = horizontalAccuracyString
+                let altitudeString = String(format:"%gm", newLocation.altitude)
+                altitudeLabel.text = altitudeString
+                let verticalAccuracyString = String(format:"%gm", newLocation.verticalAccuracy)
+                verticalAccuracyLabel.text = verticalAccuracyString
+                if let previousPoint = locationsHistory.last {
+                    print("movement distance: " + "\(newLocation.distance(from: previousPoint))")
+                    totalMovementDistance += newLocation.distance(from: previousPoint)
+                }
+                self.locationsHistory.append(newLocation)
+                let distanceString = String(format:"%gm", totalMovementDistance)
+                distanceTraveledLabel.text = distanceString
+            }
+        }
+    }
+
+
+}
+
